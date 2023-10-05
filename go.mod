@@ -1,3 +1,3 @@
-module github.com/joaovds/go_todo
+module github.com/joaovds/taskergo
 
 go 1.21.1
