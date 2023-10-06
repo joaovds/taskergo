@@ -17,7 +17,7 @@ func NewLoadTaskGroupsRepository(db *sql.DB) LoadTaskGroupsRepository {
 func (l LoadTaskGroupsRepository) LoadAll() ([]repositories.LoadTaskGroupRepositoryResult, error) {
   var taskGroups []repositories.LoadTaskGroupRepositoryResult
 
-  rows, err := l.Db.Query("SELECT * FROM task_groups")
+  rows, err := l.Db.Query("SELECT * FROM task_group")
   if err != nil {
     return taskGroups, err
   }
