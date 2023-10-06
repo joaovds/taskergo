@@ -1,7 +1,7 @@
 package data_usecases
 
 import (
-	repositories "github.com/joaovds/taskergo/internal/cli/data/contracts/repositories/task_group"
+	repositories "github.com/joaovds/taskergo/internal/data/contracts/repositories/task_group"
 	"github.com/joaovds/taskergo/internal/domain/entities"
 )
 
