@@ -1,6 +1,8 @@
 package repositories
 
-import "github.com/joaovds/taskergo/internal/domain/entities"
+import (
+  "github.com/joaovds/taskergo/internal/domain/entities"
+)
 
 type LoadTaskGroupsRepository interface {
   LoadAll() ([]LoadTaskGroupRepositoryResult, error)

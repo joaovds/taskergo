@@ -6,11 +6,11 @@ import (
 )
 
 type LoadTaskGroupsController struct {
-  loadTaskGroups usecases.LoadTaskGroups
+  LoadTaskGroups usecases.LoadTaskGroups
 }
 
-func (c *LoadTaskGroupsController) Exec() contracts.HttpResponse {
-  taskGroups, err := c.loadTaskGroups.Load()
+func (c LoadTaskGroupsController) Exec() contracts.HttpResponse {
+  taskGroups, err := c.LoadTaskGroups.Load()
   if err != nil {
     return contracts.ServerError(err.Error())
   }
