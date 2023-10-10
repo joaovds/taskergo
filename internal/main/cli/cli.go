@@ -14,9 +14,6 @@ func HandleCliFlags(cliFlags config.CliFlags) {
   }
 
   a := factories.MakeLoadTaskGroups().Exec()
-  factories.MakeLoadTaskGroups().Exec()
-  factories.MakeLoadTaskGroups().Exec()
-  factories.MakeLoadTaskGroups().Exec()
   fmt.Println(a)
 }
 

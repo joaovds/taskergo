@@ -34,7 +34,6 @@ func Connect() (*sql.DB, error) {
     }
 
     db = connection
-    log.Println("Novo db")
   })
 
   if db == nil {
