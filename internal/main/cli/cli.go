@@ -12,8 +12,8 @@ func HandleCliFlags(cliFlags config.CliFlags) {
   if *cliFlags.Help {
     flag.PrintDefaults()
   }
-
-  a := factories.MakeLoadTaskGroups().Exec()
-  fmt.Println(a)
+  if *cliFlags.ShowTaskGroups {
+    fmt.Println(factories.MakeLoadTaskGroups().Exec())
+  }
 }
 
