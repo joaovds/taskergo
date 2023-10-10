@@ -1,9 +1,12 @@
 package main
 
-import "github.com/joaovds/taskergo/internal/cli"
+import (
+  "github.com/joaovds/taskergo/internal/main/cli"
+  "github.com/joaovds/taskergo/internal/main/config"
+)
 
 func main() {
-  cliFlags := cli.SetupCliFlags()
+  cliFlags := config.SetupCliFlags()
   cli.HandleCliFlags(cliFlags)
 }
 
