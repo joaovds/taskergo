@@ -24,10 +24,11 @@ func HandleCliFlags(cliFlags config.CliFlags) {
     }
 
     var outputData [][]string
+    const uniqueIdentifier int = iota
     for _, taskGroup := range data {
-      outputData = append(outputData, []string{taskGroup.Name, taskGroup.Description})
+      outputData = append(outputData, []string{fmt.Sprintf("%d", uniqueIdentifier), taskGroup.Name, taskGroup.Description})
     }
-    headers := []string{"Name", "Description"}
+    headers := []string{"", "Name", "Description"}
 
     fmt.Println("Task Groups:")
     outputtablewriter.WriteOutputTable(outputData, headers)
