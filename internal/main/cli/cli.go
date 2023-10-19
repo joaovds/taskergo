@@ -9,9 +9,10 @@ import (
 )
 
 func HandleCliFlags(cliFlags config.CliFlags) {
-  if *cliFlags.Help {
+  if (*cliFlags.Help || (cliFlags.TotalFlags <= 0)) {
     flag.PrintDefaults()
   }
+
   if *cliFlags.ShowTaskGroups {
     fmt.Println(factories.MakeLoadTaskGroups().Exec())
   }

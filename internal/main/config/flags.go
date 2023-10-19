@@ -5,6 +5,7 @@ import (
 )
 
 type CliFlags struct {
+  TotalFlags int
   Help *bool
   ShowTaskGroups *bool
 }
@@ -16,6 +17,8 @@ func SetupCliFlags() CliFlags {
   }
 
   flag.Parse()
+
+  cliFlags.TotalFlags = flag.NFlag()
 
   return cliFlags
 }
