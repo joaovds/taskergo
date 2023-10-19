@@ -1,11 +1,11 @@
 package cli
 
 import (
-  "flag"
-  "fmt"
+	"flag"
 
-  "github.com/joaovds/taskergo/internal/main/config"
-  "github.com/joaovds/taskergo/internal/main/factories"
+	outputtablewriter "github.com/joaovds/taskergo/internal/infra/outputTableWriter"
+	"github.com/joaovds/taskergo/internal/main/config"
+	"github.com/joaovds/taskergo/internal/main/factories"
 )
 
 func HandleCliFlags(cliFlags config.CliFlags) {
@@ -14,7 +14,14 @@ func HandleCliFlags(cliFlags config.CliFlags) {
   }
 
   if *cliFlags.ShowTaskGroups {
-    fmt.Println(factories.MakeLoadTaskGroups().Exec())
+    taskGroups := factories.MakeLoadTaskGroups().Exec()
+
+    // taskGroups.Data
+    // preciso deixar esse taskGroups.Data como [][]string
+    normalizedTaskGroups := [][]string{
+    }
+
+    outputtablewriter.WriteOutputTable(taskGroups.Data, []string{"oie", "oie2", "oie3"})
   }
 }
 
