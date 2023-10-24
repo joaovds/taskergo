@@ -6,3 +6,7 @@ type TaskGroup struct {
   Description string `json:"description"`
 }
 
+func (taskGroup TaskGroup) GetTableHeaders() []string {
+  return []string{"", "Name", "Description"}
+}
+
