@@ -4,6 +4,7 @@ import (
 	"database/sql"
 
 	repositories "github.com/joaovds/taskergo/internal/data/contracts/repositories/task_group"
+	"github.com/joaovds/taskergo/internal/infra/queries"
 )
 
 type LoadTaskGroupsRepository struct {
@@ -17,7 +18,7 @@ func NewLoadTaskGroupsRepository(db *sql.DB) LoadTaskGroupsRepository {
 func (l LoadTaskGroupsRepository) LoadAll() ([]repositories.LoadTaskGroupRepositoryResult, error) {
   var taskGroups []repositories.LoadTaskGroupRepositoryResult
 
-  rows, err := l.Db.Query("SELECT id, name, description FROM task_groups")
+  rows, err := l.Db.Query(queries.TaskGroups().GetTaskGroups)
   if err != nil {
     return taskGroups, err
   }
